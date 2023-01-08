@@ -4,7 +4,7 @@ import CampoTexto from '../CampoTexto/CampoTexto.js'
 import ListaSuspensa from '../ListaSuspensa/ListaSuspensa.js'
 import Botao from '../Botao/Botao.js'
 
-const Formulario = () => {
+const Formulario = ({adicionarColaboradorCadastrado}) => {
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
@@ -23,8 +23,12 @@ const Formulario = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log('Form foi submetido =>>> nome:' + nome, 'cargo:' + cargo, 'imagem:' + imagem, 'select:' + time)
-
+        adicionarColaboradorCadastrado ({
+            nome: nome,
+            cargo: cargo,
+            imagem: imagem,
+            time: time
+        })
     }
 
     return (

@@ -4,22 +4,12 @@ import CampoTexto from '../CampoTexto/CampoTexto.js'
 import ListaSuspensa from '../ListaSuspensa/ListaSuspensa.js'
 import Botao from '../Botao/Botao.js'
 
-const Formulario = ({adicionarColaboradorCadastrado}) => {
+const Formulario = ({adicionarColaboradorCadastrado, times}) => {
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
-
-    const times = [
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'Devops',
-        'UX e Design',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -29,6 +19,11 @@ const Formulario = ({adicionarColaboradorCadastrado}) => {
             imagem: imagem,
             time: time
         })
+
+        setNome('')
+        setCargo('')
+        setImagem('')
+        setTime('Programação')
     }
 
     return (
@@ -58,7 +53,7 @@ const Formulario = ({adicionarColaboradorCadastrado}) => {
                 />
                 <ListaSuspensa 
                     obrigatorio={true}
-                    itens={times}
+                    times={times}
                     label='Time'
                     valor={time}
                     setValor={valor => setTime(valor)} />

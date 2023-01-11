@@ -45,7 +45,6 @@ function App() {
   ]
 
   const [colaboradores, setColaboradores] = useState([])
-  console.log(colaboradores)
 
   return (
 

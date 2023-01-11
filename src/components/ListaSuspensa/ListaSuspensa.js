@@ -7,6 +7,7 @@ const ListaSuspensa = ({label, times, obrigatorio, valor, setValor}) => {
         <div className='lista-suspensa'>
             <label>{label}</label>
             <select required={obrigatorio} value={valor} onChange={evento => setValor(evento.target.value)}>
+                <option value=''></option>
                 {times.map(time => <option key={time}>{time}</option>)}
             </select>
         </div>

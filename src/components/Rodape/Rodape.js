@@ -3,7 +3,7 @@ import './Rodape.css'
 const Rodape = () => {
 
     return (
-        <footer className='rodape'>
+        <footer className='footer'>
             <section className='redes-sociais-icones'>       
                 <a href='https://facebook.com/aluraonline' target='_blank'>
                     <img src="/imagens/fb.png" alt="logo do facebook" />

@@ -23,7 +23,7 @@ const Formulario = ({adicionarColaboradorCadastrado, times}) => {
         setNome('')
         setCargo('')
         setImagem('')
-        setTime('Programação')
+        setTime('')
     }
 
     return (

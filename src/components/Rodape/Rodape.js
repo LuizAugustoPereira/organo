@@ -5,13 +5,13 @@ const Rodape = () => {
     return (
         <footer className='footer'>
             <section className='redes-sociais-icones'>       
-                <a href='https://facebook.com/aluraonline' target='_blank'>
+                <a href='https://facebook.com/aluraonline' target='_blank' rel="noreferrer">
                     <img src="/imagens/fb.png" alt="logo do facebook" />
                 </a>
-                <a href='https://twitter.com/aluraonline' target='_blank'>
+                <a href='https://twitter.com/aluraonline' target='_blank' rel="noreferrer">
                     <img src="/imagens/tw.png" alt="logo do twitter" />
                 </a>
-                <a href='https://instagram.com/aluraonline' target='_blank'>
+                <a href='https://instagram.com/aluraonline' target='_blank' rel="noreferrer">
                     <img src="/imagens/ig.png" alt="logo do instagram" />
                 </a>
             </section>

@@ -1,6 +1,7 @@
 .time {
     text-align: center;
     padding: 32px;
+    position: relative;
 }
 
 .time h3 {
@@ -16,4 +17,11 @@
     flex-wrap: wrap;
     gap: 24px;
     margin-top: 32px;
+}
+
+.input-color {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    background-color: transparent;
 }

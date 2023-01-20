@@ -6,7 +6,7 @@ import Time from './components/Time/Time.js';
 
 function App() {
 
-  const times = [
+  const [times, setTimes] = useState([
     {
       nome: 'Programação',
       corPrimaria: '#57C278',
@@ -42,9 +42,24 @@ function App() {
       corPrimaria: '#FF8A29',
       corSecundaria: '#FFEEDF'
     }
-  ]
+  ])
 
   const [colaboradores, setColaboradores] = useState([])
+
+  const deletarColaborador = (event) => {
+    console.log('Função navegando pela árvore de componentes')
+    event.target.parentNode.parentNode.remove()
+  }
+
+  const mudarCorDoTime = (cor, nome) => {
+    setTimes(times.map(time => {
+      if(time.nome === nome) {
+        time.corPrimaria = cor
+      }
+
+      return time
+    })
+  )}
 
   return (
 
@@ -57,12 +72,14 @@ function App() {
 
       {times.map(time => (
         <Time
+          mudarCor={mudarCorDoTime}
           nome={time.nome}
           corPrimaria={time.corPrimaria}
           corSecundaria={time.corSecundaria}
           key={time.nome}
           colaboradores=
             {colaboradores.filter(colaborador => colaborador.time === time.nome)}
+          aoDeletar={deletarColaborador}
         />
       ))}
       <Rodape />

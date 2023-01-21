@@ -1,11 +1,11 @@
 import './Colaborador.css'
 import { AiFillCloseCircle } from 'react-icons/ai'
 
-const Colaborador = ({nome, cargo, imagem, corPrimaria, aoDeletar}) => {
+const Colaborador = ({nome, cargo, imagem, corPrimaria, aoDeletar, id}) => {
 
     return (
         <div className='colaborador'>
-            <AiFillCloseCircle className="deletar" onClick={event => aoDeletar(event)} />
+            <AiFillCloseCircle className="deletar" onClick={() => aoDeletar(id)} />
             <div className='cabecalho' style={{backgroundColor: corPrimaria}}>
                 <img src={imagem} alt={nome} />
             </div>

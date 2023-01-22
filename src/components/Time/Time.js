@@ -2,9 +2,10 @@ import './Time.css'
 import Colaborador from '../Colaborador/Colaborador.js'
 import hexToRgba from 'hex-to-rgba'
 
-const Time = ({nome, corPrimaria, colaboradores, aoDeletar, mudarCor, id}) => {
+const Time = ({nome, corPrimaria, colaboradores, aoDeletar, mudarCor, id, aoFavoritar}) => {
     
     return (
+
         colaboradores.length > 0 && 
             <section
                 className='time'
@@ -19,13 +20,11 @@ const Time = ({nome, corPrimaria, colaboradores, aoDeletar, mudarCor, id}) => {
                 <div className="colaboradores-container">
                     {colaboradores.map((colaborador, indice) => (
                         <Colaborador
-                            nome={colaborador.nome}
-                            cargo={colaborador.cargo}
-                            imagem={colaborador.imagem}
+                            colaborador={colaborador}
                             key={indice}
-                            id={colaborador.id}
                             corPrimaria={corPrimaria}
                             aoDeletar={aoDeletar}
+                            aoFavoritar={aoFavoritar}
                         />
                     ))}
                 </div>

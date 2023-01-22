@@ -34,6 +34,7 @@ const Formulario = ({adicionarColaboradorCadastrado, times, cadastrarTime}) => {
             <form className='formulario' onSubmit={handleSubmit}>
                 <h2>Preencha os dados para criar o card do colaborador.</h2>
                 <Campo
+                    type='text'
                     valor={nome}
                     setValor={valor => setNome(valor)}
                     obrigatorio={true} 
@@ -41,6 +42,7 @@ const Formulario = ({adicionarColaboradorCadastrado, times, cadastrarTime}) => {
                     placeholder='Digite seu nome'
                 />
                 <Campo
+                    type='text'
                     valor={cargo}
                     setValor={valor => setCargo(valor)}
                     obrigatorio={true}
@@ -48,6 +50,7 @@ const Formulario = ({adicionarColaboradorCadastrado, times, cadastrarTime}) => {
                     placeholder='Digite seu cargo'
                 />
                 <Campo
+                    type='text'
                     valor={imagem}
                     setValor={valor => setImagem(valor)}
                     label='Imagem'
@@ -65,10 +68,11 @@ const Formulario = ({adicionarColaboradorCadastrado, times, cadastrarTime}) => {
             </form>
             <form className='formulario' onSubmit={event => {
                 event.preventDefault()
-                cadastrarTime({nome: nomeTime, corPrimaria: corTime})}
+                cadastrarTime({nome: nomeTime, cor: corTime})}
             }>
                 <h2>Preencha os dados para criar um novo time.</h2>
                 <Campo
+                    type='text'
                     valor={nomeTime}
                     setValor={valor => setNomeTime(valor)}
                     obrigatorio={true} 

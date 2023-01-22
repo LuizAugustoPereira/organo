@@ -11,37 +11,37 @@ function App() {
     {
       id: uuidv4(),
       nome: 'Programação',
-      corPrimaria: '#57C278',
+      cor: '#57C278',
     },
     {
       id: uuidv4(),
       nome: 'Front-End',
-      corPrimaria: '#82CFFA',
+      cor: '#82CFFA',
     },
     {
       id: uuidv4(),
       nome: 'Data Science',
-      corPrimaria: '#A6D157',
+      cor: '#A6D157',
     },
     {
       id: uuidv4(),
       nome: 'Devops',
-      corPrimaria: '#E06B69',
+      cor: '#E06B69',
     },
     {
       id: uuidv4(),
       nome: 'UX e Design',
-      corPrimaria: '#DB6EBF',
+      cor: '#DB6EBF',
     },
     {
       id: uuidv4(),
       nome: 'Mobile',
-      corPrimaria: '#FFBA05',
+      cor: '#FFBA05',
     },
     {
       id: uuidv4(),
       nome: 'Inovação e Gestão',
-      corPrimaria: '#FF8A29',
+      cor: '#FF8A29',
     }
   ])
 
@@ -246,17 +246,17 @@ function App() {
     setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id))
   }
 
-  const mudarCorDoTime = (cor, id) => {
+  const mudarCor = (cor, id) => {
     setTimes(times.map(time => {
       if(time.id === id) {
-        time.corPrimaria = cor
+        time.cor = cor
       }
       return time
     })
   )}
 
-  const cadastrarTime = (novoTime) => {
-    setTimes([...times, {...novoTime, id: uuidv4()}])
+  const cadastrarTime = ({nome, cor}) => {
+    setTimes([...times, { nome, cor, id: uuidv4()}])
   }
 
   const resolverFavorito = id => {
@@ -281,11 +281,9 @@ function App() {
         <h1>Minha Organização</h1>
         {times.map((time, indice) => (
           <Time
-            mudarCor={mudarCorDoTime}
-            nome={time.nome}
-            corPrimaria={time.corPrimaria}
+            mudarCor={mudarCor}
             key={indice}
-            id={time.id}
+            time={time}
             colaboradores=
               {colaboradores.filter(colaborador => colaborador.time === time.nome)}
             aoDeletar={deletarColaborador}

@@ -1,10 +1,8 @@
  import './Campo.css'
 
-const Campo = ({ type = 'text', label, placeholder, obrigatorio, valor, setValor }) => {
+const Campo = ({ type, label, placeholder, obrigatorio = false, valor, setValor }) => {
 
-    const handleCampo = e => {
-        setValor(e.target.value)
-    }
+    const handleCampo = e => setValor(e.target.value)
 
     return (
         <div className={`campo campo-${type}`}>
